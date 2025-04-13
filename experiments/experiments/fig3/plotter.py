@@ -73,7 +73,7 @@ def run():
         )
 
         ax.set_title(f"$\epsilon$ = {noise}")
-        ax.set_xlabel("Numer of Training Samples")
+        ax.set_xlabel("Number of Training Samples")
         ax.set_ylabel("Test Accuracy")
         ax.set_ylim([0.5, 1.0])
         ax.get_legend().remove()

@@ -17,7 +17,7 @@ from experiments.searchers.gosdt import run as gosdt_search
 DIR_DATA_CP4IM = os.path.join("data", "cp4im")
 DIR_DATA_SYNTH = os.path.join("data", "synth")
 
-CP4IM_DATASET_URL = 'https://dtai.cs.kuleuven.be/CP4IM/datasets/data/{dataset}.txt'
+CP4IM_DATASET_URL = 'https://dtai-static.cs.kuleuven.be/CP4IM/datasets/data/{dataset}.txt'
 CP4IM_DATASET_NAMES = sorted([
     'zoo-1',
     'vote',
@@ -110,6 +110,7 @@ def run_search(searcher: str, *args, **kwargs):
     except (TimeoutError, Empty):
         print("Process timed out")
     finally:
+        p.join()
         p.close()
         return result
 

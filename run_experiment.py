@@ -22,3 +22,16 @@ if __name__ == '__main__':
             job -= 2 * len(CP4IM_DATASET_NAMES)
             tree_id = job % SYNTH_NUM_TREES
             run_fig3(tree_id)
+            
+# i wanted to just run fig3 for a second
+# if __name__ == '__main__':
+#     parser = ArgumentParser()
+#     parser.add_argument('--job_index', '-j', default=None, type=int)
+#     args = parser.parse_args()
+
+#     total_fig1_fig2_jobs = 2 * len(CP4IM_DATASET_NAMES)
+#     jobs = list(range(total_fig1_fig2_jobs, 52)) if args.job_index is None else [args.job_index]
+
+#     for job in jobs:
+#         tree_id = (job - total_fig1_fig2_jobs) % SYNTH_NUM_TREES
+#         run_fig3(tree_id)
