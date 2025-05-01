@@ -1,0 +1,97 @@
+{
+    "feature": 13,
+    "false": {
+        "feature": 7,
+        "false": {
+            "feature": 19,
+            "false": {
+                "prediction": 1
+            },
+            "true": {
+                "feature": 1,
+                "false": {
+                    "feature": 25,
+                    "false": {
+                        "prediction": 1
+                    },
+                    "true": {
+                        "feature": 22,
+                        "false": null,
+                        "true": null
+                    }
+                },
+                "true": {
+                    "feature": 10,
+                    "false": null,
+                    "true": null
+                }
+            }
+        },
+        "true": {
+            "feature": 1,
+            "false": {
+                "feature": 25,
+                "false": {
+                    "prediction": 1
+                },
+                "true": {
+                    "feature": 16,
+                    "false": null,
+                    "true": null
+                }
+            },
+            "true": {
+                "feature": 4,
+                "false": null,
+                "true": null
+            }
+        }
+    },
+    "true": {
+        "feature": 8,
+        "false": {
+            "feature": 20,
+            "false": {
+                "prediction": 0
+            },
+            "true": {
+                "feature": 2,
+                "false": {
+                    "feature": 26,
+                    "false": {
+                        "prediction": 0
+                    },
+                    "true": {
+                        "feature": 23,
+                        "false": null,
+                        "true": null
+                    }
+                },
+                "true": {
+                    "feature": 11,
+                    "false": null,
+                    "true": null
+                }
+            }
+        },
+        "true": {
+            "feature": 2,
+            "false": {
+                "feature": 26,
+                "false": {
+                    "prediction": 0
+                },
+                "true": {
+                    "feature": 17,
+                    "false": null,
+                    "true": null
+                }
+            },
+            "true": {
+                "feature": 5,
+                "false": null,
+                "true": null
+            }
+        }
+    }
+}

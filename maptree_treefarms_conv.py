@@ -2,17 +2,27 @@ from experiments.globals import CP4IM_DATASET_NAMES, SYNTH_NUM_TREES
 import time
 from typing import Tuple, Dict, Any
 from maptree import search as maptree_search
-from experiments.searchers.binary_classification_tree import BinaryClassificationTree
+from experiments.searchers.binary_classification_tree import BinaryClassificationTree, split
 from experiments.searchers.maptree import *
 from experiments.globals import get_stratified_k_folds_cp4im_dataset, get_full_cp4im_dataset, run_search, save_results
 import pdb
 import numpy as np
 
+# helper function for parse tree 
+# (for case where there's an unbalanced branch, ex. left doesn't split but right does)
+def predict_by_simulating(X, y, feature, direction):
+    # left is false (feature == 0) and right is true(feature == 1)
+    mask = (X[:, feature] == int(direction))
+    if mask.sum() == 0:
+        return 0 # default to predicting 0 if nothing
+    counts = np.bincount(y[mask], minlength=2)
+    return np.argmax(counts)
+
 # function to convert maptree into json, like gosdt/treefarms does
 # input: maptree (binary classification tree) class
 # output: recursive dict structure with left and right for each split, 
 # as well as prediction labels assigned based on mode (if fit on data, will default to 0 if not)
-def parse_tree(tree, verbose = 0):
+def parse_tree(tree, X, y, verbose=0):
     # base case: if the number has parentheses directly to left and right of it,
     # like (1), then the splits on this feature are leaves  
     s = str(tree)
@@ -20,14 +30,15 @@ def parse_tree(tree, verbose = 0):
         if verbose == 1:
             print("leaf:", int(s[1:-1]))
         return {"feature": int(s[1:-1]), 
-                "left": {"feature": None, "left": None, "right": None, "prediction": np.argmax(tree.left.label_counts)}, 
-                "right": {"feature": None, "left": None, "right": None, "prediction": np.argmax(tree.right.label_counts)}}
+                "left": {"prediction": np.argmax(tree.left.label_counts) if tree.left else predict_by_simulating(X, y, int(s[1:-1]), False)},
+                "right": {"prediction": np.argmax(tree.right.label_counts) if tree.right else predict_by_simulating(X, y, int(s[1:-1]), True)}}
 
-    s = s[1:-1]
-    
     # recursive case: if the number has parentheses like this )10( then it's got leaves
+    s = s[1:-1]
     i, balance = 0, 0
-    while i < len(s):
+    while i < len(s): 
+    # find the root feature of this tree by counting parentheses 
+    # until they get to the middle (balanced number of parentheses on either side)
         if s[i] == '(':
             balance += 1
         elif s[i] == ')':
@@ -38,22 +49,33 @@ def parse_tree(tree, verbose = 0):
                 root_feature += s[i]
                 i += 1
             root_feature = int(root_feature)
-            
-            # Split left and right subtrees
-            left_subtree = tree.left
-            right_subtree = tree.right
+
             if verbose == 1:
-                print("Left:", left_subtree)
-                print("Right:", right_subtree)
-            # Recur on left and right
-            left_tree = parse_tree(left_subtree)
-            right_tree = parse_tree(right_subtree)
+                print("Splitting on feature:", root_feature)
+
+            left_indices, right_indices = split(X, root_feature) 
+            # use split function in binary classification tree class
+            if verbose == 1:
+                print(tree.left)
+                print(tree.right)
+
             
-            # Return tree structure
+            if str(tree.left) != "": # left side continues splitting
+                left_tree = parse_tree(tree.left, X[left_indices], y[left_indices], verbose)
+            else: # left side is none (empty str)
+                pred = predict_by_simulating(X, y, root_feature, False)
+                left_tree = {"prediction": pred}
+            
+            if str(tree.right) != "": # left side continues splitting
+                right_tree = parse_tree(tree.right, X[right_indices], y[right_indices], verbose)
+            else: # right side is none (empty str)
+                pred = predict_by_simulating(X, y, root_feature, True)
+                right_tree = {"prediction": pred}
+
             return {"feature": root_feature, "left": left_tree, "right": right_tree}
         i += 1
 
-    return None 
+    return None
 
 def relabel(tree_dict):
     if not isinstance(tree_dict, dict):
@@ -80,15 +102,15 @@ def print_tree(tree, indent="", last=True):
     prefix = "└── " if last else "├── "
     if "prediction" in tree:
         print(indent + prefix + "| Prediction: " + str(tree["prediction"]))
+        return
     else:
         print(indent + prefix + str(tree["feature"]))
     indent += "    " if last else "│   "
-    
+
     left, right = tree["left"], tree["right"]
-    if left is not None or right is not None:
-        # Print left subtree
+    if left is not None:
         print_tree(left, indent, last=False)
-        # Print right subtree
+    if right is not None:
         print_tree(right, indent, last=True)
 
 # function to convert tree dictionary into binary classification tree form

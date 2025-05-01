@@ -1,0 +1,416 @@
+[
+    {
+        "alpha": 0.95,
+        "beta": 0.5,
+        "rho": [
+            2.5,
+            2.5
+        ],
+        "posterior": -265.2209831692218,
+        "tree": {
+            "feature": 13,
+            "left": {
+                "feature": 7,
+                "left": {
+                    "feature": 19,
+                    "left": {
+                        "prediction": 1
+                    },
+                    "right": {
+                        "feature": 1,
+                        "left": {
+                            "feature": 25,
+                            "left": {
+                                "prediction": 1
+                            },
+                            "right": {
+                                "feature": 22,
+                                "left": {
+                                    "prediction": 1
+                                },
+                                "right": {
+                                    "prediction": 0
+                                }
+                            }
+                        },
+                        "right": {
+                            "feature": 10,
+                            "left": {
+                                "prediction": 1
+                            },
+                            "right": {
+                                "prediction": 0
+                            }
+                        }
+                    }
+                },
+                "right": {
+                    "feature": 25,
+                    "left": {
+                        "feature": 1,
+                        "left": {
+                            "prediction": 1
+                        },
+                        "right": {
+                            "feature": 4,
+                            "left": {
+                                "prediction": 1
+                            },
+                            "right": {
+                                "prediction": 0
+                            }
+                        }
+                    },
+                    "right": {
+                        "feature": 16,
+                        "left": {
+                            "prediction": 1
+                        },
+                        "right": {
+                            "prediction": 0
+                        }
+                    }
+                }
+            },
+            "right": {
+                "feature": 26,
+                "left": {
+                    "feature": 2,
+                    "left": {
+                        "prediction": 0
+                    },
+                    "right": {
+                        "feature": 20,
+                        "left": {
+                            "feature": 8,
+                            "left": {
+                                "prediction": 0
+                            },
+                            "right": {
+                                "feature": 5,
+                                "left": {
+                                    "prediction": 0
+                                },
+                                "right": {
+                                    "prediction": 1
+                                }
+                            }
+                        },
+                        "right": {
+                            "feature": 11,
+                            "left": {
+                                "prediction": 0
+                            },
+                            "right": {
+                                "prediction": 1
+                            }
+                        }
+                    }
+                },
+                "right": {
+                    "feature": 8,
+                    "left": {
+                        "feature": 20,
+                        "left": {
+                            "prediction": 0
+                        },
+                        "right": {
+                            "feature": 23,
+                            "left": {
+                                "prediction": 0
+                            },
+                            "right": {
+                                "prediction": 1
+                            }
+                        }
+                    },
+                    "right": {
+                        "feature": 17,
+                        "left": {
+                            "prediction": 0
+                        },
+                        "right": {
+                            "prediction": 1
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "alpha": 0.95,
+        "beta": 0.5,
+        "rho": [
+            1.5,
+            3.0
+        ],
+        "posterior": -259.9908564739354,
+        "tree": {
+            "feature": 13,
+            "left": {
+                "feature": 7,
+                "left": {
+                    "feature": 19,
+                    "left": {
+                        "prediction": 1
+                    },
+                    "right": {
+                        "feature": 1,
+                        "left": {
+                            "feature": 25,
+                            "left": {
+                                "prediction": 1
+                            },
+                            "right": {
+                                "feature": 22,
+                                "left": {
+                                    "prediction": 1
+                                },
+                                "right": {
+                                    "prediction": 0
+                                }
+                            }
+                        },
+                        "right": {
+                            "feature": 10,
+                            "left": {
+                                "prediction": 1
+                            },
+                            "right": {
+                                "prediction": 0
+                            }
+                        }
+                    }
+                },
+                "right": {
+                    "feature": 25,
+                    "left": {
+                        "feature": 1,
+                        "left": {
+                            "prediction": 1
+                        },
+                        "right": {
+                            "feature": 4,
+                            "left": {
+                                "prediction": 1
+                            },
+                            "right": {
+                                "prediction": 0
+                            }
+                        }
+                    },
+                    "right": {
+                        "feature": 16,
+                        "left": {
+                            "prediction": 1
+                        },
+                        "right": {
+                            "prediction": 0
+                        }
+                    }
+                }
+            },
+            "right": {
+                "feature": 26,
+                "left": {
+                    "feature": 2,
+                    "left": {
+                        "prediction": 0
+                    },
+                    "right": {
+                        "feature": 20,
+                        "left": {
+                            "feature": 8,
+                            "left": {
+                                "prediction": 0
+                            },
+                            "right": {
+                                "feature": 5,
+                                "left": {
+                                    "prediction": 0
+                                },
+                                "right": {
+                                    "prediction": 1
+                                }
+                            }
+                        },
+                        "right": {
+                            "feature": 11,
+                            "left": {
+                                "prediction": 0
+                            },
+                            "right": {
+                                "prediction": 1
+                            }
+                        }
+                    }
+                },
+                "right": {
+                    "feature": 8,
+                    "left": {
+                        "feature": 20,
+                        "left": {
+                            "prediction": 0
+                        },
+                        "right": {
+                            "feature": 23,
+                            "left": {
+                                "prediction": 0
+                            },
+                            "right": {
+                                "prediction": 1
+                            }
+                        }
+                    },
+                    "right": {
+                        "feature": 17,
+                        "left": {
+                            "prediction": 0
+                        },
+                        "right": {
+                            "prediction": 1
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "alpha": 0.95,
+        "beta": 0.5,
+        "rho": [
+            3.0,
+            1.0
+        ],
+        "posterior": -267.7110259252074,
+        "tree": {
+            "feature": 13,
+            "left": {
+                "feature": 7,
+                "left": {
+                    "feature": 19,
+                    "left": {
+                        "prediction": 1
+                    },
+                    "right": {
+                        "feature": 1,
+                        "left": {
+                            "feature": 25,
+                            "left": {
+                                "prediction": 1
+                            },
+                            "right": {
+                                "feature": 22,
+                                "left": {
+                                    "prediction": 1
+                                },
+                                "right": {
+                                    "prediction": 0
+                                }
+                            }
+                        },
+                        "right": {
+                            "feature": 10,
+                            "left": {
+                                "prediction": 1
+                            },
+                            "right": {
+                                "prediction": 0
+                            }
+                        }
+                    }
+                },
+                "right": {
+                    "feature": 25,
+                    "left": {
+                        "feature": 1,
+                        "left": {
+                            "prediction": 1
+                        },
+                        "right": {
+                            "feature": 4,
+                            "left": {
+                                "prediction": 1
+                            },
+                            "right": {
+                                "prediction": 0
+                            }
+                        }
+                    },
+                    "right": {
+                        "feature": 16,
+                        "left": {
+                            "prediction": 1
+                        },
+                        "right": {
+                            "prediction": 0
+                        }
+                    }
+                }
+            },
+            "right": {
+                "feature": 26,
+                "left": {
+                    "feature": 2,
+                    "left": {
+                        "prediction": 0
+                    },
+                    "right": {
+                        "feature": 20,
+                        "left": {
+                            "feature": 8,
+                            "left": {
+                                "prediction": 0
+                            },
+                            "right": {
+                                "feature": 5,
+                                "left": {
+                                    "prediction": 0
+                                },
+                                "right": {
+                                    "prediction": 1
+                                }
+                            }
+                        },
+                        "right": {
+                            "feature": 11,
+                            "left": {
+                                "prediction": 0
+                            },
+                            "right": {
+                                "prediction": 1
+                            }
+                        }
+                    }
+                },
+                "right": {
+                    "feature": 8,
+                    "left": {
+                        "feature": 20,
+                        "left": {
+                            "prediction": 0
+                        },
+                        "right": {
+                            "feature": 23,
+                            "left": {
+                                "prediction": 0
+                            },
+                            "right": {
+                                "prediction": 1
+                            }
+                        }
+                    },
+                    "right": {
+                        "feature": 17,
+                        "left": {
+                            "prediction": 0
+                        },
+                        "right": {
+                            "prediction": 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+]
